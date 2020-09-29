@@ -2,6 +2,7 @@ package com.example.smash
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.View
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -15,6 +16,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import kotlinx.android.synthetic.main.activity_create_user.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,8 +38,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-    }
 
+
+
+    }
 
 
     override fun onSupportNavigateUp(): Boolean {
@@ -48,6 +52,7 @@ class MainActivity : AppCompatActivity() {
     fun loginBtnNavClicked(view: View){
     val loginIntent= Intent(this,LoginActivity::class.java)
         startActivity(loginIntent)
+
     }
 
     fun addChannelClicked(view: View){

@@ -1,13 +1,11 @@
 package Services
-
+/*
 import Utilities.URL_REGISTER
 import android.content.Context
-import android.util.Log
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
-import org.json.JSONObject
+import android.util.Log */
 
+import org.json.JSONObject
+/*
 object AuthService {
     fun registerUser(context: Context,email:String,password:String,complete: (Boolean)->Unit){
 
@@ -35,4 +33,4 @@ object AuthService {
 
         Volley.newRequestQueue(context).add(registerRequest)
     }
-}
+}*/
