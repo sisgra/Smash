@@ -50,7 +50,7 @@
         android:layout_marginRight="32dp"
         android:background="@color/colorPrimary"
         android:onClick="loginLoginBtnClicked"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="@color/cardview_light_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,6 +83,18 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="Don't have an account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginLoginBtn" />
+
+    <Button
+        android:id="@+id/resetPasswordBtn"
+        android:layout_width="177dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:onClick="resetPasswordClicked"
+        android:text="Reset password"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginLoginBtn" />

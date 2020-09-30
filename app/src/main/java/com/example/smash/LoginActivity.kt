@@ -1,10 +1,13 @@
 package com.example.smash
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.smash.Controller.DashboardActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -24,7 +27,39 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
     }
 
+    fun resetPasswordClicked(view: View){
 
+        val builder:AlertDialog.Builder=AlertDialog.Builder(this)
+        builder.setTitle("Forgot Password")
+        val view:View=layoutInflater.inflate(R.layout.activity_dialog_forgot_password,null)
+        val username:EditText=view.findViewById<EditText>(R.id.et_username)
+        builder.setView(view)
+        builder.setPositiveButton("Reset",DialogInterface.OnClickListener { _, _->  })
+            forgotPassword(username)
+        builder.setNegativeButton("Close",DialogInterface.OnClickListener { _, _->  })
+        builder.show()
+    }
+
+
+    private fun forgotPassword(username:EditText){
+        if (username.text.toString().isEmpty()) {
+            return
+        }
+
+        if (loginPasswordTxt.text.toString().isEmpty()) {
+
+            return
+        }
+
+
+        auth.sendPasswordResetEmail(username.text.toString())
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                   Toast.makeText(this,"Email sent",Toast.LENGTH_SHORT).show()
+                }
+            }
+
+}
     fun loginLoginBtnClicked(view: View) {
 
 
